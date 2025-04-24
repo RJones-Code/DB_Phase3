@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="24dp"
+    android:background="#FFFFFF">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
+
+        <!-- Welcome Message -->
+        <TextView
+            android:id="@+id/textViewWelcome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Welcome"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="32dp" />
+
+        <!-- Add Parent Account Button -->
+        <Button
+            android:id="@+id/buttonAddParent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Add Parent Account"
+            android:padding="12dp"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Register for Courses Button -->
+        <Button
+            android:id="@+id/buttonRegisterCourses"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Register for Courses"
+            android:padding="12dp"
+            android:layout_marginBottom="16dp" />
+
+        <!-- View Transcript Button -->
+        <Button
+            android:id="@+id/buttonViewTranscript"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="View Transcript"
+            android:padding="12dp"
+            android:layout_marginBottom="24dp" />
+
+        <!-- Alerts Section Title -->
+        <TextView
+            android:id="@+id/textViewAlertsTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Alerts"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp" />
+
+        <!-- Alerts List -->
+        <LinearLayout
+            android:id="@+id/alertsContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <!-- Alert items will be added here dynamically -->
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>
