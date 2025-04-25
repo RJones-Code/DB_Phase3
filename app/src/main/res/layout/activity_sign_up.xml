@@ -61,12 +61,12 @@
             android:padding="12dp"
             android:layout_marginBottom="24dp" />
 
-        <!-- Back to Login Link -->
+        <!-- Back to Welcome Link -->
         <TextView
-            android:id="@+id/textViewBackToLogin"
+            android:id="@+id/textViewBackToWelcome"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Back to Login"
+            android:text="Back to Welcome"
             android:textColor="@android:color/holo_blue_dark"
             android:textStyle="bold"
             android:clickable="true"

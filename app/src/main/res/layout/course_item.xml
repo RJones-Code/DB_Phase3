@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="12dp"
+    android:background="#F0F0F0"
+    android:layout_marginBottom="12dp"
+    android:elevation="2dp">
+
+    <TextView
+        android:id="@+id/textViewCourseID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Course ID: CS101"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textViewCourseName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Course Name: Introduction to Computer Science" />
+
+    <TextView
+        android:id="@+id/textViewDepartment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Department: Computer Science" />
+
+    <TextView
+        android:id="@+id/textViewCredits"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Credits: 3" />
+
+    <Button
+        android:id="@+id/buttonRegister"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Register"
+        android:layout_marginTop="8dp" />
+
+</LinearLayout>

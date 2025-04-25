@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -43,10 +44,10 @@ public class activity_login extends AppCompatActivity {
                             intent = new Intent(activity_login.this, student_profile.class);
                         }
                         else if(type.equals("instructor")){
-                            intent = new Intent(activity_login.this, activity_welcome.class);
+                            intent = new Intent(activity_login.this, instructor_profile.class);
                         }
                         else{//admin
-                            intent = new Intent(activity_login.this, activity_welcome.class);
+                            intent = new Intent(activity_login.this, admin_profile.class);
                         }
                         intent.putExtra("email", email);
                         activity_login.this.startActivity(intent);
@@ -61,6 +62,11 @@ public class activity_login extends AppCompatActivity {
             LoginRequest loginRequest = new LoginRequest(email, password, getString(R.string.url) + "processlogin.php", responseListener);
             RequestQueue queue = Volley.newRequestQueue(activity_login.this);
             queue.add(loginRequest);
+        });
+        TextView textViewSignUp = findViewById(R.id.textViewSignUp);
+        textViewSignUp.setOnClickListener(v -> {
+            Intent intent = new Intent(activity_login.this, activity_sign_up.class);
+            startActivity(intent);
         });
     }
 }
