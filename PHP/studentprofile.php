@@ -1,4 +1,4 @@
-<?php
+w<?php
 header('Content-Type: application/json');
 
 $servername = "localhost";

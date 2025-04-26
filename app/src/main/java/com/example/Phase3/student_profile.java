@@ -46,8 +46,11 @@ public class student_profile extends AppCompatActivity {
         btnRegisterCourses.setOnClickListener(v ->
                 startActivity(new Intent(this, activity_welcome.class)));
 
-        btnViewTranscript.setOnClickListener(v ->
-                startActivity(new Intent(this, activity_welcome.class)));
+        btnViewTranscript.setOnClickListener(v -> {
+            Intent intent = new Intent(this, TranscriptActivity.class);
+            intent.putExtra("email", studentEmail);  // Pass the student's email to the new activity
+            startActivity(intent);
+        });
     }
 
     private void fetchStudentData() {
@@ -97,7 +100,6 @@ public class student_profile extends AppCompatActivity {
             @Override
             protected Map<String, String> getParams() {
                 Map<String, String> params = new HashMap<>();
-                params.put("mobile", "true");
                 params.put("email", studentEmail);
                 return params;
             }
