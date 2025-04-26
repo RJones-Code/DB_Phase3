@@ -35,6 +35,7 @@ public class student_profile extends AppCompatActivity {
         Button btnAddParent = findViewById(R.id.buttonAddParent);
         Button btnRegisterCourses = findViewById(R.id.buttonRegisterCourses);
         Button btnViewTranscript = findViewById(R.id.buttonViewTranscript);
+        Button btnLogout = findViewById(R.id.buttonLogout);
         LinearLayout alertsContainer = findViewById(R.id.alertsContainer);
 
         // Fetch student data
@@ -48,6 +49,9 @@ public class student_profile extends AppCompatActivity {
                 startActivity(new Intent(this, activity_welcome.class)));
 
         btnViewTranscript.setOnClickListener(v ->
+                startActivity(new Intent(this, activity_welcome.class)));
+
+        btnLogout.setOnClickListener(v ->
                 startActivity(new Intent(this, activity_welcome.class)));
     }
 
