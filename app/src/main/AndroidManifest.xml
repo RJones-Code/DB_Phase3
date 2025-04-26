@@ -11,6 +11,7 @@
         android:theme="@style/Theme.Movies"
         android:usesCleartextTraffic="true">
         <activity android:name=".student_profile"/>
+        <activity android:name=".TranscriptActivity"/>
         <activity android:name=".activity_login"/>
         <activity android:name=".activity_sign_up"/>
             <activity android:name=".activity_welcome"

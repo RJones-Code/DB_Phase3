@@ -46,8 +46,11 @@ public class activity_login extends AppCompatActivity {
                         else if(type.equals("instructor")){
                             intent = new Intent(activity_login.this, activity_welcome.class);
                         }
-                        else{//admin
-                            intent = new Intent(activity_login.this, student_profile.class);
+                        else if (type.equals("parent")) {
+                            intent = new Intent(activity_login.this, activity_welcome.class);
+                        }
+                        else { //admin
+                            intent = new Intent(activity_login.this, activity_welcome.class);
                         }
                         intent.putExtra("email", email);
                         activity_login.this.startActivity(intent);
