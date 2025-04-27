@@ -40,9 +40,11 @@ public class student_profile extends AppCompatActivity {
         fetchStudentData();
 
         // Button click handlers
-        btnAddParent.setOnClickListener(v ->
-                startActivity(new Intent(this, activity_welcome.class)));
-
+        btnAddParent.setOnClickListener(v -> {
+                    Intent intent = new Intent(student_profile.this, add_parent_activity.class);
+                    intent.putExtra("email", studentEmail);
+                    startActivity(intent);
+        });
         btnRegisterCourses.setOnClickListener(v ->
                 startActivity(new Intent(this, activity_welcome.class)));
 
