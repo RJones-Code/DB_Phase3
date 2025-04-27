@@ -3,4 +3,12 @@
     <string name="url">http://192.168.68.54:80/Phase2Database/</string>
     <string name="submit_query">Submit Query</string>
     <string name="find_the_title_and_length_of_movies_with_input_year">Find the title and length of movies with input year:</string>
+    <string-array name="alert_types">
+        <item>Academic</item>
+        <item>Behavioral</item>
+        <item>Financial</item>
+        <item>Medical</item>
+        <item>Other</item>
+    </string-array>
+
 </resources>

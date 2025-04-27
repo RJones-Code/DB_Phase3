@@ -50,7 +50,7 @@ public class activity_login extends AppCompatActivity {
                             intent = new Intent(activity_login.this, activity_welcome.class);
                         }
                         else { //admin
-                            intent = new Intent(activity_login.this, activity_welcome.class);
+                            intent = new Intent(activity_login.this, activity_admin_create_alert.class);
                         }
                         intent.putExtra("email", email);
                         activity_login.this.startActivity(intent);
