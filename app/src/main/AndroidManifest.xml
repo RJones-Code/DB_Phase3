@@ -10,6 +10,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Movies"
         android:usesCleartextTraffic="true">
+        <activity android:name=".activity_enroll_section"/>
+        <activity android:name=".activity_enroll_courses"/>
         <activity android:name=".instructor_profile"/>
         <activity android:name=".activity_course_history"/>
         <activity android:name=".activity_student_list"/>
