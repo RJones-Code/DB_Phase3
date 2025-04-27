@@ -45,8 +45,11 @@ public class student_profile extends AppCompatActivity {
         btnAddParent.setOnClickListener(v ->
                 startActivity(new Intent(this, activity_welcome.class)));
 
-        btnRegisterCourses.setOnClickListener(v ->
-                startActivity(new Intent(this, activity_welcome.class)));
+        btnRegisterCourses.setOnClickListener(v -> {
+            Intent intent = new Intent(student_profile.this, activity_enroll_courses.class);
+            intent.putExtra("email", studentEmail);
+            startActivity(intent);
+        });
 
         btnViewTranscript.setOnClickListener(v ->
                 startActivity(new Intent(this, activity_welcome.class)));
