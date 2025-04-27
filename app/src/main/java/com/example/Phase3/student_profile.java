@@ -34,6 +34,7 @@ public class student_profile extends AppCompatActivity {
         Button btnAddParent = findViewById(R.id.buttonAddParent);
         Button btnRegisterCourses = findViewById(R.id.buttonRegisterCourses);
         Button btnViewTranscript = findViewById(R.id.buttonViewTranscript);
+        Button btnLogout = findViewById(R.id.buttonLogout);
         LinearLayout alertsContainer = findViewById(R.id.alertsContainer);
 
         // Fetch student data
@@ -43,14 +44,19 @@ public class student_profile extends AppCompatActivity {
         btnAddParent.setOnClickListener(v ->
                 startActivity(new Intent(this, activity_welcome.class)));
 
-        btnRegisterCourses.setOnClickListener(v ->
-                startActivity(new Intent(this, activity_welcome.class)));
+        btnRegisterCourses.setOnClickListener(v -> {
+            Intent intent = new Intent(student_profile.this, activity_enroll_courses.class);
+            intent.putExtra("email", studentEmail);
+            startActivity(intent);
+        });
 
         btnViewTranscript.setOnClickListener(v -> {
             Intent intent = new Intent(this, TranscriptActivity.class);
             intent.putExtra("email", studentEmail);  // Pass the student's email to the new activity
             startActivity(intent);
         });
+        btnLogout.setOnClickListener(v ->
+                startActivity(new Intent(this, activity_welcome.class)));
     }
 
     private void fetchStudentData() {
