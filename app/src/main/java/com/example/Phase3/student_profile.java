@@ -13,7 +13,6 @@ import com.android.volley.Response;
 import com.android.volley.Request;
 import org.json.JSONException;
 import org.json.JSONObject;
-import android.view.View;
 
 import android.widget.Toast;
 import java.util.HashMap;
@@ -51,9 +50,11 @@ public class student_profile extends AppCompatActivity {
             startActivity(intent);
         });
 
-        btnViewTranscript.setOnClickListener(v ->
-                startActivity(new Intent(this, activity_welcome.class)));
-
+        btnViewTranscript.setOnClickListener(v -> {
+            Intent intent = new Intent(this, TranscriptActivity.class);
+            intent.putExtra("email", studentEmail);  // Pass the student's email to the new activity
+            startActivity(intent);
+        });
         btnLogout.setOnClickListener(v ->
                 startActivity(new Intent(this, activity_welcome.class)));
     }
@@ -105,7 +106,6 @@ public class student_profile extends AppCompatActivity {
             @Override
             protected Map<String, String> getParams() {
                 Map<String, String> params = new HashMap<>();
-                params.put("mobile", "true");
                 params.put("email", studentEmail);
                 return params;
             }
