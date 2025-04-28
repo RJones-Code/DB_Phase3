@@ -8,6 +8,7 @@
    - Install Android Studio
    - In Android Studio go to File -> Open and go to the click on the 'Movies' folder to open the project. 
    - Add the files in the PHP folder to a folder name Phase2Database in htdocs.
+   - Create table db2 and run script 'DB2-tables' to create and populate tables for use. (e.g. phpMyAdmin for xampp)
    - Change the ip address in string.xml to your ip address.
    - Build the Gradle. This should automatically create a config with a module.
    - Create a virtual device via the device manager. The pixel 4 works well.
