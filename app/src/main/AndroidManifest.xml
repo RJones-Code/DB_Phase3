@@ -15,12 +15,17 @@
         <activity android:name=".instructor_profile"/>
         <activity android:name=".activity_course_history"/>
         <activity android:name=".activity_student_list"/>
+
         <activity android:name=".student_profile"/>
         <activity android:name=".TranscriptActivity"/>
         <activity android:name=".activity_login"/>
         <activity android:name=".activity_sign_up"/>
-            <activity android:name=".activity_welcome"
-                android:exported="true" >
+        <activity android:name=".activity_admin_create_alert"/>
+        <activity android:name=".add_parent_activity"/>
+        <activity android:name=".ParentProfileActivity" />
+
+        <activity android:name=".activity_welcome"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:padding="24dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add Parent Information"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:layout_gravity="center_horizontal"
+            android:paddingBottom="24dp" />
+
+        <EditText
+            android:id="@+id/etParentEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Parent Email"
+            android:inputType="textEmailAddress" />
+
+        <EditText
+            android:id="@+id/etParentPhone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Parent Phone Number"
+            android:inputType="phone"
+            android:layout_marginTop="16dp" />
+
+        <EditText
+            android:id="@+id/etParentPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Parent Password"
+            android:inputType="textPassword"
+            android:layout_marginTop="16dp" />
+
+        <Button
+            android:id="@+id/btnSubmitParent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Submit Parent Info"
+            android:layout_marginTop="24dp" />
+    </LinearLayout>
+</ScrollView>

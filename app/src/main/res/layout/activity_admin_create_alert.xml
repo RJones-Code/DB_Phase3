@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <TextView
+            android:id="@+id/textViewTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Create Student Alert"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:layout_gravity="center"
+            android:paddingBottom="20dp"/>
+
+        <!-- Student ID Input -->
+        <EditText
+            android:id="@+id/etStudentID"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Student ID"
+            android:inputType="text" />
+
+        <!-- Alert Type Spinner -->
+        <Spinner
+            android:id="@+id/spinnerAlertType"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"/>
+
+        <!-- Alert Message Input -->
+        <EditText
+            android:id="@+id/etAlertMessage"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:hint="Alert Message"
+            android:inputType="textMultiLine"
+            android:gravity="top|start"
+            android:layout_marginTop="16dp"/>
+
+        <!-- Create Alert Button -->
+        <Button
+            android:id="@+id/btnCreateAlert"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Create Alert"
+            android:layout_marginTop="24dp"/>
+
+        <!-- Logout Button -->
+        <Button
+            android:id="@+id/btnLogout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Logout"
+            android:layout_marginTop="16dp"/>
+    </LinearLayout>
+</ScrollView>
