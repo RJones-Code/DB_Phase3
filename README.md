@@ -3,7 +3,7 @@
 2. Pratheek Kotamarti
 3. Russell Jones
 
-1. Installilation & Setup:
+1. Instillation & Setup:
    - Install MySQL and Apache. (through XAMPP or standalone)
    - Install Android Studio
    - In Android Studio go to File -> Open and go to the click on the 'Movies' folder to open the project. 
