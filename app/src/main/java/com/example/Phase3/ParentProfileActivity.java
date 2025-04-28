@@ -2,7 +2,10 @@ package com.example.Phase3;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.Spinner;
 import android.widget.Toast;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -31,7 +34,11 @@ public class ParentProfileActivity extends AppCompatActivity {
     private ArrayList<Alert> alertList;
     private String parentEmail;
 
-    Button btnLogout;
+    private Spinner spinnerStudents;
+    private String selectedStudentEmail = "";
+
+
+    Button btnLogout, btnViewTranscript;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,8 +53,21 @@ public class ParentProfileActivity extends AppCompatActivity {
 
         parentEmail = getIntent().getStringExtra("email");
         btnLogout = findViewById(R.id.btnLogout);
+        btnViewTranscript = findViewById(R.id.btnViewTranscript);
+        spinnerStudents = findViewById(R.id.spinnerStudents);
 
+        fetchStudents();
         fetchAlerts();
+
+        btnViewTranscript.setOnClickListener(v -> {
+            if (!selectedStudentEmail.isEmpty()) {
+                Intent intent = new Intent(ParentProfileActivity.this, TranscriptActivity.class);
+                intent.putExtra("email", selectedStudentEmail);
+                startActivity(intent);
+            } else {
+                Toast.makeText(ParentProfileActivity.this, "Please select a student first", Toast.LENGTH_SHORT).show();
+            }
+        });
 
         btnLogout.setOnClickListener(v -> {
             Intent intent = new Intent(ParentProfileActivity.this, activity_login.class);
@@ -56,6 +76,7 @@ public class ParentProfileActivity extends AppCompatActivity {
             finish();
         });
     }
+
 
     private void fetchAlerts() {
         String url = getString(R.string.url) + "fetchParentAlerts.php?email=" + parentEmail;
@@ -86,6 +107,59 @@ public class ParentProfileActivity extends AppCompatActivity {
         RequestQueue queue = Volley.newRequestQueue(this);
         queue.add(request);
     }
+
+    private void fetchStudents() {
+        String url = getString(R.string.url) + "fetchParentStudents.php?email=" + parentEmail;
+
+        JsonArrayRequest request = new JsonArrayRequest(Request.Method.GET, url, null,
+                response -> {
+                    ArrayList<String> studentNames = new ArrayList<>();
+                    ArrayList<String> studentEmails = new ArrayList<>();
+
+                    try {
+                        for (int i = 0; i < response.length(); i++) {
+                            JSONObject studentObject = response.getJSONObject(i);
+                            String studentName = studentObject.getString("student_name");
+                            String studentEmail = studentObject.getString("student_email");
+
+                            studentNames.add(studentName);
+                            studentEmails.add(studentEmail);
+                        }
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+
+                    if (!studentNames.isEmpty()) {  // ✅ important: check if list is not empty
+                        ArrayAdapter<String> adapter = new ArrayAdapter<>(ParentProfileActivity.this,
+                                android.R.layout.simple_spinner_item, studentNames);
+                        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                        spinnerStudents.setAdapter(adapter);
+
+                        spinnerStudents.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                            @Override
+                            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                                selectedStudentEmail = studentEmails.get(position);
+                            }
+
+                            @Override
+                            public void onNothingSelected(AdapterView<?> parent) {
+                                selectedStudentEmail = "";
+                            }
+                        });
+                    } else {
+                        Toast.makeText(ParentProfileActivity.this, "No students found", Toast.LENGTH_SHORT).show();
+                    }
+
+                },
+                error -> {
+                    error.printStackTrace();
+                    Toast.makeText(ParentProfileActivity.this, "Error fetching students.", Toast.LENGTH_SHORT).show();
+                });
+
+        RequestQueue queue = Volley.newRequestQueue(this);
+        queue.add(request);
+    }
+
 
 
     // 👉 Nested Alert class
