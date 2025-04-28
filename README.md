@@ -1,7 +1,7 @@
 # Team 3 Phase 3 Database Project
-Chakshu Patel
-Pratheek Kotamarti
-Russel Jones
+1. Chakshu Patel
+2. Pratheek Kotamarti
+3. Russell Jones
 
 1. Installilation & Setup:
    - Install MySQL and Apache. (through XAMPP or standalone)
